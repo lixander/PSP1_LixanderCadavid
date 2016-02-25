@@ -85,7 +85,36 @@ public class Test {
         desviacionEstandar = objetoOperaciones.calcularDesviacionEstandar(listaDatos);
         assertEquals("62,26", desviacionEstandar.replace('.', ','));
     }
-    
+    @org.junit.Test
+    public void mediaCorrecta2()
+    {
+        Archivo a = new Archivo();
+        String []datosVector;
+        String lectura;
+        String desviacion, promedio;
+        lectura = a.realizarCalculos("C:\\Users\\lixander.cadavid\\Documents\\NetBeansProjects\\PSP1_Lixander_Felipe_Cadavid_Betancur\\numerostest2PSP1.txt");
+        datosVector = lectura.split(",");
+        Operaciones objetoOperaciones = new Operaciones();
+        ListaSimpleCircularCabeza listaDatos = new ListaSimpleCircularCabeza();
+        listaDatos.LlenarLista(datosVector);
+        promedio = objetoOperaciones.calcularPromedioDosDecimales(listaDatos);
+        assertEquals("550,60", promedio.replace('.', ','));
+    }
+    @org.junit.Test
+    public void desviacionCorrecta2()
+    {
+        Archivo a = new Archivo();
+        String []datosVector;
+        String lectura;
+        String desviacionEstandar;
+        lectura = a.realizarCalculos("C:\\Users\\lixander.cadavid\\Documents\\NetBeansProjects\\PSP1_Lixander_Felipe_Cadavid_Betancur\\numerostest2PSP1.txt");
+        datosVector = lectura.split(",");
+        Operaciones objetoOperaciones = new Operaciones();
+        ListaSimpleCircularCabeza listaDatos = new ListaSimpleCircularCabeza();
+        listaDatos.LlenarLista(datosVector);
+        desviacionEstandar = objetoOperaciones.calcularDesviacionEstandar(listaDatos);
+        assertEquals("572,03", desviacionEstandar.replace('.', ','));
+    }
     
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
